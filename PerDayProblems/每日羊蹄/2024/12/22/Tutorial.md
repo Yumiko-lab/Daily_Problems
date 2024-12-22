@@ -1,4 +1,7 @@
 
+[Yawn-Sean](https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2024/12/1221/solution/cf980b.md) 
+
+构造题，
 
 ```cpp
 #include <bits/stdc++.h>
@@ -33,7 +36,6 @@ int main() {
 
     vector f1(4, vector<int>(n));
     vector f2(4, vector<int>(n));
-
 
     auto calc1 = [&]() {
         int r = 4, c = n;
