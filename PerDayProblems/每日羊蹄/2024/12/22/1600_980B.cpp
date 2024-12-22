@@ -8,27 +8,25 @@ int main() {
     int n, k;
     cin >> n >> k;
 
-    if (k != 2 || k != n - 2) {
-        cout << "NO\n";
-        return 0;
-    }
+    if ((~k & 1) || k == n - 2) {
+        cout << "YES\n";
+        vector<string> g(4, string(n, '.'));
 
-    vector<string> g(4, string(n, '.'));
-
-    if (k == 2) {
-        g[1][1] = g[2][1] = '#';
-    } else {
-        for (int i = 1; i < n - 1; i++) {
-            g[1][i] = '#';
+        if (~k & 1) {
+            for (int i = 1, j = 0; j < k / 2; i++, j++) {
+                g[1][i] = g[2][i] = '#';
+            }
+        } else {
+            for (int i = 1; i < n - 1; i++) {
+                g[1][i] = '#';
+            }
         }
-    }
-
-    cout << "YES\n";
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << g[i][j] << ' ';
+        for (int i = 0; i < 4; i++) {
+            cout << g[i] << '\n';
         }
         cout << '\n';
+    } else {
+        cout << "NO\n";
     }
 
     return 0;
