@@ -2,6 +2,8 @@
 
 ## CF1995C
 
+[Luogu - Tutorials](https://www.luogu.com.cn/problem/solution/CF1995C) 
+
 $$
 \begin{align}
 a_i^{2^{k_i}} &= a_{i - 1}^{2^{k_{i - 1}}} \\
