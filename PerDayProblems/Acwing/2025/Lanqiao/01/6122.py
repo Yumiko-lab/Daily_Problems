@@ -1,21 +1,12 @@
-import sys
-input = sys.stdin.read
-
 def main():
-    data = input().split()
-    n = int(data[0])
-    q = int(data[1])
+    n, q = map(int, input().split())
     
     cnt = [[[0] * n for _ in range(n)] for _ in range(3)]
     
+    res = []
     ans = 0
-    index = 2
-    results = []
     for _ in range(q):
-        x = int(data[index])
-        y = int(data[index + 1])
-        z = int(data[index + 2])
-        index += 3
+        x, y, z = map(int, input().split())
         
         if cnt[0][x][y] + 1 == n:
             ans += 1
@@ -29,9 +20,9 @@ def main():
             ans += 1
         cnt[2][x][z] += 1
         
-        results.append(str(ans))
+        res.append(str(ans))
     
-    print("\n".join(results))
+    print("\n".join(res))
 
 if __name__ == "__main__":
     main()
